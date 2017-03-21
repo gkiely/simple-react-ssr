@@ -7,12 +7,12 @@ var HelloMessage = React.createClass({
     return {}
   },
   render: function() {
-    var name = this.state.name ? this.state.name : this.props.name
+    var name = this.state.name ? this.state.name : this.props.name;
     return (
     	<div id="HelloMessage">Hello {name}</div>
     );
   }
-})
+});
 
 if (isNode) {
   exports.HelloMessage = HelloMessage;

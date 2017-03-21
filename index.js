@@ -7,10 +7,7 @@ let app 			= express();
 let React 			= require('react');
 let ReactDOMServer 	= require('react-dom/server');
 let components 		= require('./public/components.js');
-
 let path 			= require('path');
-
-// var HelloMessage = React.createFactory(components.HelloMessage);
 
 
 let createComponent = function(key){
@@ -24,9 +21,6 @@ let renderComponent = function(res, url, name, props){
 		react: ReactDOMServer.renderToString(component(props))
 	});
 };
-
-// app.set('view engine', 'ejs');
-// app.use(express.static(__dirname + '/public'));
 
 app.set('views', path.join(__dirname, 'views'));
 app.engine('html', require('ejs').renderFile);
